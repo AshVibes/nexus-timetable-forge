@@ -8,7 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Wand2, Settings, CheckCircle, Clock, AlertTriangle, Download } from "lucide-react";
+import { Wand2, Settings, CheckCircle, Clock, AlertTriangle, Download, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const programs = [
@@ -313,6 +313,195 @@ export const GenerateScheduleView = () => {
           </div>
         </TabsContent>
       </Tabs>
+
+      {/* Demo Timetable Display */}
+      {generationStatus === "complete" && (
+        <Card className="shadow-soft">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Calendar className="w-5 h-5" />
+              Generated Timetable (Sample)
+            </CardTitle>
+            <CardDescription>B.Ed Semester 3 - Week of January 15, 2024</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left p-3 font-medium">Time</th>
+                    <th className="text-left p-3 font-medium">Monday</th>
+                    <th className="text-left p-3 font-medium">Tuesday</th>
+                    <th className="text-left p-3 font-medium">Wednesday</th>
+                    <th className="text-left p-3 font-medium">Thursday</th>
+                    <th className="text-left p-3 font-medium">Friday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="p-3 font-medium text-muted-foreground">9:00-10:00</td>
+                    <td className="p-3">
+                      <div className="bg-primary/10 p-2 rounded border-l-2 border-primary">
+                        <div className="font-medium text-sm">Educational Psychology</div>
+                        <div className="text-xs text-muted-foreground">Dr. Sharma • Room 201</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-accent/10 p-2 rounded border-l-2 border-accent">
+                        <div className="font-medium text-sm">Curriculum Studies</div>
+                        <div className="text-xs text-muted-foreground">Prof. Gupta • Room 102</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-primary/10 p-2 rounded border-l-2 border-primary">
+                        <div className="font-medium text-sm">Educational Psychology</div>
+                        <div className="text-xs text-muted-foreground">Dr. Sharma • Room 201</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-success/10 p-2 rounded border-l-2 border-success">
+                        <div className="font-medium text-sm">Teaching Practice</div>
+                        <div className="text-xs text-muted-foreground">Various Schools</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-accent/10 p-2 rounded border-l-2 border-accent">
+                        <div className="font-medium text-sm">Curriculum Studies</div>
+                        <div className="text-xs text-muted-foreground">Prof. Gupta • Room 102</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-3 font-medium text-muted-foreground">10:00-11:00</td>
+                    <td className="p-3">
+                      <div className="bg-warning/10 p-2 rounded border-l-2 border-warning">
+                        <div className="font-medium text-sm">Mathematics Pedagogy</div>
+                        <div className="text-xs text-muted-foreground">Dr. Patel • Room 103</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-primary/10 p-2 rounded border-l-2 border-primary">
+                        <div className="font-medium text-sm">Educational Psychology</div>
+                        <div className="text-xs text-muted-foreground">Dr. Sharma • Room 201</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-warning/10 p-2 rounded border-l-2 border-warning">
+                        <div className="font-medium text-sm">Mathematics Pedagogy</div>
+                        <div className="text-xs text-muted-foreground">Dr. Patel • Room 103</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-success/10 p-2 rounded border-l-2 border-success">
+                        <div className="font-medium text-sm">Teaching Practice</div>
+                        <div className="text-xs text-muted-foreground">Various Schools</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-secondary/10 p-2 rounded border-l-2 border-secondary">
+                        <div className="font-medium text-sm">Research Methods</div>
+                        <div className="text-xs text-muted-foreground">Dr. Kumar • Room 105</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b bg-muted/20">
+                    <td className="p-3 font-medium text-muted-foreground">11:00-11:30</td>
+                    <td className="p-3 text-center text-muted-foreground" colSpan={5}>Break</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-3 font-medium text-muted-foreground">11:30-12:30</td>
+                    <td className="p-3">
+                      <div className="bg-secondary/10 p-2 rounded border-l-2 border-secondary">
+                        <div className="font-medium text-sm">Research Methods</div>
+                        <div className="text-xs text-muted-foreground">Dr. Kumar • Room 105</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-warning/10 p-2 rounded border-l-2 border-warning">
+                        <div className="font-medium text-sm">Science Pedagogy Lab</div>
+                        <div className="text-xs text-muted-foreground">Prof. Singh • Lab 201</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-secondary/10 p-2 rounded border-l-2 border-secondary">
+                        <div className="font-medium text-sm">Research Methods</div>
+                        <div className="text-xs text-muted-foreground">Dr. Kumar • Room 105</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-success/10 p-2 rounded border-l-2 border-success">
+                        <div className="font-medium text-sm">Teaching Practice</div>
+                        <div className="text-xs text-muted-foreground">Various Schools</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-warning/10 p-2 rounded border-l-2 border-warning">
+                        <div className="font-medium text-sm">Mathematics Pedagogy</div>
+                        <div className="text-xs text-muted-foreground">Dr. Patel • Room 103</div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="p-3 font-medium text-muted-foreground">12:30-1:30</td>
+                    <td className="p-3">
+                      <div className="bg-accent/10 p-2 rounded border-l-2 border-accent">
+                        <div className="font-medium text-sm">Assessment & Evaluation</div>
+                        <div className="text-xs text-muted-foreground">Dr. Verma • Room 104</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-warning/10 p-2 rounded border-l-2 border-warning">
+                        <div className="font-medium text-sm">Science Pedagogy Lab</div>
+                        <div className="text-xs text-muted-foreground">Prof. Singh • Lab 201</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-accent/10 p-2 rounded border-l-2 border-accent">
+                        <div className="font-medium text-sm">Assessment & Evaluation</div>
+                        <div className="text-xs text-muted-foreground">Dr. Verma • Room 104</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-success/10 p-2 rounded border-l-2 border-success">
+                        <div className="font-medium text-sm">Teaching Practice</div>
+                        <div className="text-xs text-muted-foreground">Various Schools</div>
+                      </div>
+                    </td>
+                    <td className="p-3">
+                      <div className="bg-primary/10 p-2 rounded border-l-2 border-primary">
+                        <div className="font-medium text-sm">Seminar Presentation</div>
+                        <div className="text-xs text-muted-foreground">All Faculty • Hall A</div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-4 text-xs text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded border-l-2 border-primary bg-primary/10"></div>
+                <span>Core Subjects</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded border-l-2 border-accent bg-accent/10"></div>
+                <span>Curriculum Studies</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded border-l-2 border-warning bg-warning/10"></div>
+                <span>Pedagogy & Labs</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded border-l-2 border-success bg-success/10"></div>
+                <span>Teaching Practice</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded border-l-2 border-secondary bg-secondary/10"></div>
+                <span>Research Methods</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 };
