@@ -2,6 +2,8 @@ import { useState } from "react";
 import { TimetableNav } from "@/components/timetable/TimetableNav";
 import { DashboardView } from "@/components/timetable/DashboardView";
 import { GenerateScheduleView } from "@/components/timetable/GenerateScheduleView";
+import { CoursesManagementView } from "@/components/timetable/CoursesManagementView";
+import { FacultyManagementView } from "@/components/timetable/FacultyManagementView";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("dashboard");
@@ -13,17 +15,9 @@ const Index = () => {
       case "generate":
         return <GenerateScheduleView />;
       case "courses":
-        return (
-          <div className="flex items-center justify-center h-64 text-muted-foreground">
-            <p>Course Management - Coming Soon</p>
-          </div>
-        );
+        return <CoursesManagementView />;
       case "faculty":
-        return (
-          <div className="flex items-center justify-center h-64 text-muted-foreground">
-            <p>Faculty Management - Coming Soon</p>
-          </div>
-        );
+        return <FacultyManagementView />;
       case "timeslots":
         return (
           <div className="flex items-center justify-center h-64 text-muted-foreground">
